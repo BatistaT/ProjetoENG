@@ -21,8 +21,7 @@ public abstract class CarroPrototype {
     public void setValorCompra(double valorCompra) {
         this.valorCompra = valorCompra;
     }
-}
-
+    }    
 
 Definimos a partir dela que todos os carros terão um valor de compra, que será manipulado por um conjunto de getters e setters. Também garantimos que todos eles possuem os métodos para exibir informações e para realizar a cópia do objeto.
 
@@ -48,8 +47,8 @@ public class FiestaPrototype extends CarroPrototype {
     public CarroPrototype clonar() {
         return new FiestaPrototype(this);
     }
+    }
  
-}
 
 
 Note que no início são definidos dois construtores, um protegido e outro público. O construtor protegido recebe como parâmetro um objeto da própria classe protótipo. Este é o chamado construtor por cópia, que recebe um outro objeto da mesma classe e cria um novo objeto com os mesmos valores nos atributos. A necessidade deste contrutor será vista no método de cópia.
@@ -71,7 +70,7 @@ public static void main(String[] args) {
  
     System.out.println(palioNovo.exibirInfo());
     System.out.println(palioUsado.exibirInfo());
-}
+    }
 
 
 Observe com atenção o cliente. Criamos dois protótipos de carros, cada um deles é criado utilizando o prótipo PalioPrototype instanciado anteriormente. Ou seja, a partir de uma instância de um protótipo é possível criar vários objetos a partir da cópia deste protótipo.
